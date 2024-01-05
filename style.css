@@ -1,0 +1,239 @@
+
+#headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* Ajoutez un espace autour des divs */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url('img/6yy.jpg') center/cover no-repeat;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Couleur noire avec 50% d'opacité */
+    z-index: -1;
+}
+
+#plateau {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-gap: 1px;
+    width: 800px;
+    /* height: 500px; */
+}
+
+#scoreContainer {
+    margin-top: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#scoreNoir,
+#scoreBlanc {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.cellule {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 50px;
+    font-size: 64px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    /* Ajout d'ombre */
+    transition: all 0.3s ease;
+    /* Animation douce */
+}
+
+.cellule:active {
+    transform: scale(0.9);
+    /* Effet de clic */
+}
+
+.cellule:nth-child(even) {
+    background-color: #086908;
+}
+
+.cellule:nth-child(odd) {
+    background-color: #086908;
+}
+
+.noir {
+    color: #fff;
+}
+
+.blanc {
+    color: #000;
+}
+
+#joueurActuel {
+    margin-top: 10px;
+}
+
+#commencerJeu {
+    cursor: pointer;
+    width: 320px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #fff;
+    background-color: #00000094;
+    border: none;
+    border-radius: 25px;
+    /* Bords arrondis */
+    box-shadow: 0 4px #999;
+    /* Ombre pour l'effet de bouton */
+    transition: background-color 0.3s, box-shadow 0.1s, transform 0.1s;
+    /* Transition pour les effets */
+
+    font-size: 32px;
+    /* Taille de la police */
+    font-family: 'Arial', sans-serif;
+    /* Famille de polices */
+    font-weight: bold;
+    /* Poids de la police */
+    letter-spacing: 1.5px;
+    /* Espacement des lettres */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre portée du texte */
+    color: #FFFFFF;
+    /* Couleur du texte */
+}
+
+#commencerJeu:hover {
+    background-color: green;
+    /* Couleur verte au survol */
+}
+
+#bienvenueTexte {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    /* Ajustez selon vos besoins */
+    color: #FFFFFF;
+    /* Couleur du texte */
+    font-family: 'roboto', sans-serif;
+    /* Famille de polices */
+    font-weight: bold;
+    /* Poids de la police */
+}
+
+#joueurActuel {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    /* Ajustez selon vos besoins */
+    /* Autres styles selon vos préférences */
+    color: #FFFFFF;
+    /* Couleur du texte */
+    font-family: 'Arial', sans-serif;
+    /* Famille de polices */
+    font-weight: bold;
+    /* Poids de la police */
+}
+
+.statuScore {
+    color: #FFFFFF;
+    /* Couleur du texte */
+    font-family: 'Arial', sans-serif;
+    /* Famille de polices */
+    font-weight: bold;
+    /* Poids de la police */
+}
+
+#logo {
+    display: block;
+    margin: 20px auto;
+    /* Ajustez la marge selon vos préférences */
+    max-width: 100%;
+    /* Assurez-vous que le logo ne dépasse pas la largeur du conteneur parent */
+    height: auto;
+    /* Pour conserver les proportions de l'image */
+}
+
+/* Styles pour les alertes */
+.custom-alert {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#conteneurJoueurActuel {
+     padding: 5px;
+    margin-top: 20px; 
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    margin-left:45%;
+    /* Couleur du texte */
+    border-radius: 5px;
+    /* Bordures arrondies */
+}
+
+.joueurNoir {
+    background-color: black;
+    /* Fond noir pour le joueur noir */
+}
+
+.joueurBlanc {
+    background-color: white;
+    /* Fond blanc pour le joueur blanc */
+    color: black;
+    /* Couleur du texte pour le fond blanc */
+}
+
+
+/* Animation pour les alertes */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.custom-alert.show {
+    opacity: 1;
+}
